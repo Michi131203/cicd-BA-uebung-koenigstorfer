@@ -1,6 +1,8 @@
 package com.example.cicd;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,5 +34,18 @@ class CalculatorTest {
         Calculator c = new Calculator();
         List<Integer> nums = Arrays.asList(1, 2, 3, null, 4);
         assertEquals(c.sumUp(nums), c.addAll(nums));
+    }
+
+    @Test
+    void add_all(){
+        Calculator c = new Calculator();
+        List<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4));
+        assertEquals(10, c.addAll(list));
+    }
+
+    @Test
+    void subtract(){
+        Calculator c = new Calculator();
+        assertEquals(5, c.subtract(10,5));
     }
 }
